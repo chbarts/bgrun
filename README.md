@@ -1,4 +1,4 @@
-=== Run Programs In The Background ===
+# Run Programs In The Background
 
 Run any program in the background with intelligent standard output and standard error capture.
 
