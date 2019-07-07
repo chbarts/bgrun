@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+if [[ $# -eq 0 ]]; then
+    echo "Usage: $0 cmd [args...]"
+    echo "Run cmd in background with [args...] and stdout/stderr directed to cmd-\$(date -Iseconds)"
+    exit 0
+fi
+
+IFS=' '
+
+echo "$@" | read -A cmd
+
+prog="${cmd[1]}"
+
+eval "$@ &> $(pwd)/$prog-$(date -Iseconds) &! "
